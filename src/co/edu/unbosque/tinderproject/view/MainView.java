@@ -1,7 +1,6 @@
 package co.edu.unbosque.tinderproject.view;
 
 import java.awt.Font;
-
 import javax.swing.*;
 
 
@@ -45,5 +44,7 @@ public class MainView {
 	public JLabel getMainMessageJLabel() {
 		return this.mainMessage;
 	}
+	
+	
 	
 }
