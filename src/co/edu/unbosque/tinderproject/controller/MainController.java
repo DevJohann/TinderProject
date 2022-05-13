@@ -9,6 +9,7 @@ public class MainController {
 
 	private MainView View;
 	private MainModel Model;
+	private User ActualUser;
 	
 	public MainController(MainView view, MainModel model){
 		this.View = view;
@@ -32,8 +33,18 @@ public class MainController {
 			public void actionPerformed(ActionEvent e) {
 				view.getResponseLabel().setText("Verificando...");
 				boolean isValid = model.ValidateUser(view.getUsernameField().getText(), view.getPasswordField().getText());
-				if(isValid)
+				if(isValid) {
 					view.getResponseLabel().setText("OK");
+					//ActualUser = model.getWorkingUser();
+					if(model.checkFirstTimer()) {
+						view.getVentanaJFrame().getContentPane().removeAll();
+						view.getVentanaJFrame().repaint();
+						view.showFirstTimerMenu();
+					}
+					else{
+						
+					}
+				}
 				else {
 					view.getUsernameField().setText("");
 					view.getPasswordField().setText("");

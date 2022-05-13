@@ -4,15 +4,28 @@ import java.util.ArrayList;
 
 public class MainModel {
 	ArrayList<User> UsersDB = new ArrayList<User>();
+	User WorkingUser;
 	public MainModel() {
 		UsersDB.add(new User("Johann", "1234"));
 	}
 	
+	//Login Logic
+	
 	public boolean ValidateUser(String username, String password) {
 		for(User user : UsersDB) {
 			if(username.equals(user.getUsername()) && password.equals(user.getPassword())) {
+				this.WorkingUser = user;
 				return true;
 			}
+		}
+		return false;
+	}
+	
+	//FirstTimer Checker
+	public boolean checkFirstTimer() {
+		if(WorkingUser.getFirstTimer() == true) {
+			WorkingUser.setFirstTimer(false);
+			return true;
 		}
 		return false;
 	}

@@ -8,12 +8,15 @@ public class User {
 	private String password;
 	private String genero;
 	private int edad;
+	static private int id;
+	private boolean firstTimer = true;
 	private ArrayList<String> gustos;
 	
 	//Constructor
 	public User(String username, String password) {
 		this.nombreUsuario = username;
 		this.password = password;
+		id++;
 	}
 	
 	//Setters
@@ -29,6 +32,9 @@ public class User {
 	public void setGustos(ArrayList<String> value) {
 		this.gustos = value;
 	}
+	public void setFirstTimer(boolean value) {
+		this.firstTimer = value;
+	}
 	
 	//Getters
 	public String getUsername() {
@@ -36,5 +42,8 @@ public class User {
 	}
 	public String getPassword() {
 		return this.password;
+	}
+	public boolean getFirstTimer() {
+		return this.firstTimer;
 	}
 }

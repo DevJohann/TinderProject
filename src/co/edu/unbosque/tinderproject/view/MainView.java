@@ -103,4 +103,13 @@ public class MainView {
 		return this.ResponseLabel;
 	}
 	//End of LoginMenu section
+	
+	//FirstTimerMenu section
+	JLabel mainLabel = new JLabel("Cuéntanos sobre tí, para encontrar tu pareja perfecta");
+	
+	public void showFirstTimerMenu() {
+		mainLabel.setBounds(22, 20, 600, 40);
+		mainLabel.setFont(new Font("Serif", Font.BOLD, 18));
+		ventana.add(mainLabel);
+	}
 }
