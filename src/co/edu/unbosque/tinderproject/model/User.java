@@ -4,9 +4,17 @@ import java.util.ArrayList;
 
 public class User {
 	private String nombre;
+	private String nombreUsuario;
+	private String password;
 	private String genero;
 	private int edad;
 	private ArrayList<String> gustos;
+	
+	//Constructor
+	public User(String username, String password) {
+		this.nombreUsuario = username;
+		this.password = password;
+	}
 	
 	//Setters
 	public void setNombre(String value) {
@@ -20,5 +28,13 @@ public class User {
 	}
 	public void setGustos(ArrayList<String> value) {
 		this.gustos = value;
+	}
+	
+	//Getters
+	public String getUsername() {
+		return this.nombreUsuario;
+	}
+	public String getPassword() {
+		return this.password;
 	}
 }

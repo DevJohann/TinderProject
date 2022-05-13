@@ -14,12 +14,32 @@ public class MainController {
 		this.View = view;
 		this.Model = model;
 		
+		//StartMenu Buttons
 		view.getSignInJButton().addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				view.getVentanaJFrame().getContentPane().removeAll();
 				view.getVentanaJFrame().repaint();
 				view.getVentanaJFrame().setSize(500, 500);
+				view.showLogInMenu();
+			}
+		});
+		//End of StartMenu Buttons
+		
+		//LoginMenu Buttons
+		view.getSendCredsButton().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				view.getResponseLabel().setText("Verificando...");
+				boolean isValid = model.ValidateUser(view.getUsernameField().getText(), view.getPasswordField().getText());
+				if(isValid)
+					view.getResponseLabel().setText("OK");
+				else {
+					view.getUsernameField().setText("");
+					view.getPasswordField().setText("");
+					view.getResponseLabel().setText("Credenciales incorrectas");
+				}
+					
 			}
 		});
 	}
