@@ -1,5 +1,6 @@
 package co.edu.unbosque.tinderproject.view;
 
+import java.awt.Color;
 import java.awt.Font;
 import javax.swing.*;
 
@@ -23,9 +24,10 @@ public class MainView {
 		ventana.setLayout(null);
 		ventana.setVisible(true);
 		ventana.setTitle("Tinder");
+		ventana.getContentPane().setBackground(Color.yellow);
 		
-		mainMessage.setBounds(155, 30, 200, 40);
-		mainMessage.setFont(new Font("Serif", Font.BOLD, 20));
+		mainMessage.setBounds(80, 30, 500, 40);
+		mainMessage.setFont(new Font("Serif", Font.BOLD, 40));
 		ventana.add(mainMessage);
 		
 		SignInButton.setBounds(80, 300, 120, 40);
