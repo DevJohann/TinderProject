@@ -107,7 +107,35 @@ public class MainController {
 		//End of Register menu Buttons
 		
 		//FirstTimerMenu buttons section
-		
+			//Send Gustos Button
+		view.getSendGustosButtonFT().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String newGusto = view.getGustosFieldFT().getText();
+				model.addGustos(newGusto);
+				view.getResponseLabelFT().setText(view.getResponseLabelFT().getText() + newGusto + ", ");
+				view.getGustosFieldFT().setText("");
+			}
+		});
+			//EndTask Button (Send Data)
+		view.getEndTaskButtonFT().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(view.getAgeFieldFT().getText().equals("")) {
+					view.getCannotContinueLabelFT().setText("Debes agregar tu edad");
+				}
+				else if(model.checkGustosLength() == 0) {
+					view.getCannotContinueLabelFT().setText("Debes agregar por lo menos un gusto");
+				}
+				else {
+					int newEdad = Integer.parseInt(view.getAgeFieldFT().getText()); 
+					model.setAge(newEdad);
+					view.getVentanaJFrame().getContentPane().removeAll();
+					view.getVentanaJFrame().repaint();
+				}
+			}
+		});
+			//Back button
 		view.getBackButtonFirstTimer().addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {

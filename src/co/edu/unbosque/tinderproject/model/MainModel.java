@@ -43,4 +43,26 @@ public class MainModel {
 		WorkingUser.setFirstTimer(false);
 		return false;
 	}
+	
+	//Add gustos
+	public void addGustos(String value) {
+		WorkingUser.addGusto(value);
+	}
+	
+	//Check Gustos length
+	public int checkGustosLength() {
+		return this.WorkingUser.getGustos().size();
+	}
+	
+	//Check age value
+	public boolean isAged() {
+		if(this.WorkingUser.getAge() == 0) {
+			return false;
+		}
+		return true;
+	}
+	//Set age value
+	public void setAge(int value) {
+		WorkingUser.setEdad(value);
+	}
 }

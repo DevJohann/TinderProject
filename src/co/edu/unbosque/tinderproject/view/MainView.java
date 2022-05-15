@@ -176,19 +176,97 @@ public class MainView {
 	
 	//FirstTimerMenu section
 	JLabel mainLabel = new JLabel("Cuéntanos sobre tí, para encontrar tu pareja perfecta");
-	
+	JLabel genderLabelFirstTimer = new JLabel("Género:");
+	String[] genders = {"Hombre", "Mujer"};
+	JComboBox<String> genderComboBoxFirstTimer = new JComboBox<String>(genders);
+	JLabel ageLabelFirstTimer = new JLabel("Edad:");
+	JTextField ageFieldFirstTimer = new JTextField("");
+	JLabel gustosLabelFirstTimer = new JLabel("Que te gusta? (Uno por uno)");
+	JTextField gustosFieldFirstTimer = new JTextField();
+	JButton gustosSendButtonFT = new JButton("Añadir");
+	JButton endTaskButtonFirstTimer = new JButton("Enviar"); 
 	JButton BackButtonFirstTimer = new JButton("Salir");
+	
+	JLabel responseLabelFirstTimer = new JLabel("");
+	JLabel cannotContinueLabelFT = new JLabel();
 	
 	public void showFirstTimerMenu() {
 		mainLabel.setBounds(22, 20, 600, 40);
 		mainLabel.setFont(new Font("Serif", Font.BOLD, 18));
 		ventana.add(mainLabel);
 		
+		//BackButton
 		BackButtonFirstTimer.setBounds(10, 420, 70, 35);
 		ventana.add(BackButtonFirstTimer);
+		
+		//Genders ComboBox
+		genderComboBoxFirstTimer.setSelectedIndex(0);
+		genderComboBoxFirstTimer.setBounds(100, 110, 100, 20);
+		ventana.add(genderComboBoxFirstTimer);
+		
+		//Gender Label
+		genderLabelFirstTimer.setBounds(20, 95, 400, 40);
+		genderLabelFirstTimer.setFont(new Font("Serif", Font.BOLD, 20));
+		ventana.add(genderLabelFirstTimer);
+		
+		//Age Label
+		ageLabelFirstTimer.setBounds(20, 130, 400, 40);
+		ageLabelFirstTimer.setFont(new Font("Serif", Font.BOLD, 20));
+		ventana.add(ageLabelFirstTimer);
+		
+		//Age Field
+		ageFieldFirstTimer.setBounds(80, 142, 120, 20);
+		ventana.add(ageFieldFirstTimer);
+		
+		//Gustos Label
+		gustosLabelFirstTimer.setBounds(20, 160, 400, 40);
+		gustosLabelFirstTimer.setFont(new Font("Serif", Font.BOLD, 20));
+		ventana.add(gustosLabelFirstTimer);
+		
+		//Gustos Field
+		gustosFieldFirstTimer.setBounds(20, 200, 120, 25);
+		ventana.add(gustosFieldFirstTimer);
+		
+		//Gustos Send Button
+		gustosSendButtonFT.setBounds(145, 200, 100, 25);
+		ventana.add(gustosSendButtonFT);
+		
+		//Response Label
+		responseLabelFirstTimer.setBounds(20, 250, 600, 40);
+		ventana.add(responseLabelFirstTimer);
+		
+		//Cannot end task Label
+		cannotContinueLabelFT.setBounds(180, 360, 600, 40);
+		cannotContinueLabelFT.setFont(new Font("Serif", Font.BOLD, 20));
+		ventana.add(cannotContinueLabelFT);
+		
+		//EndTask Button
+		endTaskButtonFirstTimer.setBounds(200, 380, 120, 30);
+		ventana.add(endTaskButtonFirstTimer);
+	}
+	public JComboBox<String> getGendersComboBoxFT() {
+		return this.genderComboBoxFirstTimer;
+	}
+	public JLabel getResponseLabelFT() {
+		return this.responseLabelFirstTimer;
+	}
+	public JLabel getCannotContinueLabelFT() {
+		return this.cannotContinueLabelFT;
+	}
+	public JTextField getGustosFieldFT() {
+		return this.gustosFieldFirstTimer;
+	}
+	public JTextField getAgeFieldFT() {
+		return this.ageFieldFirstTimer;
+	}
+	public JButton getSendGustosButtonFT() {
+		return this.gustosSendButtonFT;
 	}
 	public JButton getBackButtonFirstTimer() {
 		return this.BackButtonFirstTimer;
+	}
+	public JButton getEndTaskButtonFT() {
+		return this.endTaskButtonFirstTimer;
 	}
 	//End of FirstTimerMenu section
 }

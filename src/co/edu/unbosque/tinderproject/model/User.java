@@ -7,7 +7,7 @@ public class User {
 	private String nombreUsuario;
 	private String password;
 	private String genero;
-	private int edad;
+	private int edad = 0;
 	static private int id;
 	private boolean firstTimer = true;
 	private ArrayList<String> gustos = new ArrayList<String>();
@@ -17,6 +17,11 @@ public class User {
 		this.nombreUsuario = username;
 		this.password = password;
 		id++;
+	}
+	
+	//Add Gustos
+	public void addGusto(String value) {
+		gustos.add(value);
 	}
 	
 	//Setters
@@ -48,6 +53,9 @@ public class User {
 	}
 	public String getGender() {
 		return this.genero;
+	}
+	public int getAge() {
+		return this.edad;
 	}
 	public ArrayList<String> getGustos(){
 		return this.gustos;
