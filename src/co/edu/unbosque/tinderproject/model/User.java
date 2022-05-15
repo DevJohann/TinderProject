@@ -10,7 +10,7 @@ public class User {
 	private int edad;
 	static private int id;
 	private boolean firstTimer = true;
-	private ArrayList<String> gustos;
+	private ArrayList<String> gustos = new ArrayList<String>();
 	
 	//Constructor
 	public User(String username, String password) {
@@ -45,5 +45,11 @@ public class User {
 	}
 	public boolean getFirstTimer() {
 		return this.firstTimer;
+	}
+	public String getGender() {
+		return this.genero;
+	}
+	public ArrayList<String> getGustos(){
+		return this.gustos;
 	}
 }

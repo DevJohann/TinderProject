@@ -20,13 +20,27 @@ public class MainModel {
 		}
 		return false;
 	}
+	//Add new user
+	public void addNewUser(String username, String password) {
+		UsersDB.add(new User(username, password));
+	}
+	//Check repeated username
+	public boolean checkUsername(String username) {
+		for(User user : UsersDB) {
+			if(username.equals(user.getUsername())) {
+				return true;
+			}
+		}
+		return false;
+	}
 	
 	//FirstTimer Checker
 	public boolean checkFirstTimer() {
-		if(WorkingUser.getFirstTimer() == true) {
-			WorkingUser.setFirstTimer(false);
+		if(WorkingUser.getFirstTimer() == true && WorkingUser.getGustos().size() == 0) {
+			WorkingUser.setFirstTimer(true);
 			return true;
 		}
+		WorkingUser.setFirstTimer(false);
 		return false;
 	}
 }
