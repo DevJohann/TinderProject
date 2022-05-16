@@ -54,7 +54,10 @@ public class MainController {
 						view.showFirstTimerMenu();
 					}
 					else{
-						
+						view.getVentanaJFrame().getContentPane().removeAll();
+						view.getVentanaJFrame().repaint();
+						view.showMainMenu();
+						view.getActualUserLabelMM().setText(view.getActualUserLabelMM().getText() + model.getName());
 					}
 				}
 				else {
@@ -127,11 +130,18 @@ public class MainController {
 				else if(model.checkGustosLength() == 0) {
 					view.getCannotContinueLabelFT().setText("Debes agregar por lo menos un gusto");
 				}
+				else if(view.getNameFieldFT().getText().equals("")) {
+					view.getCannotContinueLabelFT().setText("Debes agregar tu nombre");
+				}
 				else {
 					int newEdad = Integer.parseInt(view.getAgeFieldFT().getText()); 
 					model.setAge(newEdad);
+					String newName = view.getNameFieldFT().getText();
+					model.setName(newName);
 					view.getVentanaJFrame().getContentPane().removeAll();
 					view.getVentanaJFrame().repaint();
+					view.showMainMenu();
+					view.getActualUserLabelMM().setText(view.getActualUserLabelMM().getText() + model.getName());
 				}
 			}
 		});
@@ -145,5 +155,18 @@ public class MainController {
 			}
 		});
 		//End of FirstTimerMenu buttons
+		
+		//----------------- MAIN APPLICATION BUTTONS ---------------------//
+		
+		//MainMenu Buttons
+		view.getLogOffButtonMM().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				view.getVentanaJFrame().getContentPane().removeAll();
+				view.getVentanaJFrame().repaint();
+				view.showStartMenu();
+			}
+		});
+		//End of MainMenu Buttons
 	}
 }

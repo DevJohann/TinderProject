@@ -65,4 +65,12 @@ public class MainModel {
 	public void setAge(int value) {
 		WorkingUser.setEdad(value);
 	}
+	//Set name value
+	public void setName(String value) {
+		WorkingUser.setNombre(value);
+	}
+	//Get name of working user
+	public String getName() {
+		return WorkingUser.getName();
+	}
 }

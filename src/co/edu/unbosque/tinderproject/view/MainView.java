@@ -186,6 +186,8 @@ public class MainView {
 	JButton gustosSendButtonFT = new JButton("Añadir");
 	JButton endTaskButtonFirstTimer = new JButton("Enviar"); 
 	JButton BackButtonFirstTimer = new JButton("Salir");
+	JLabel nameLabelFirstTimer = new JLabel("Nombre: ");
+	JTextField nameFieldFirstTimer = new JTextField("");
 	
 	JLabel responseLabelFirstTimer = new JLabel("");
 	JLabel cannotContinueLabelFT = new JLabel();
@@ -198,6 +200,15 @@ public class MainView {
 		//BackButton
 		BackButtonFirstTimer.setBounds(10, 420, 70, 35);
 		ventana.add(BackButtonFirstTimer);
+		
+		//Name Label
+		nameLabelFirstTimer.setBounds(20, 60, 400, 30);
+		nameLabelFirstTimer.setFont(new Font("Serif", Font.BOLD, 20));
+		ventana.add(nameLabelFirstTimer);
+		
+		//Name TextField
+		nameFieldFirstTimer.setBounds(110, 65, 150, 20);
+		ventana.add(nameFieldFirstTimer);
 		
 		//Genders ComboBox
 		genderComboBoxFirstTimer.setSelectedIndex(0);
@@ -253,6 +264,9 @@ public class MainView {
 	public JLabel getCannotContinueLabelFT() {
 		return this.cannotContinueLabelFT;
 	}
+	public JTextField getNameFieldFT() {
+		return this.nameFieldFirstTimer;
+	}
 	public JTextField getGustosFieldFT() {
 		return this.gustosFieldFirstTimer;
 	}
@@ -269,4 +283,37 @@ public class MainView {
 		return this.endTaskButtonFirstTimer;
 	}
 	//End of FirstTimerMenu section
+	
+	//------------ MAIN APPLICATION MENUS --------------//
+	
+	//MainMenu section
+	JButton logOffButtonMainMenu = new JButton("Cerrar sesión");
+	JLabel actualUserLabelMainMenu = new JLabel("Usuario: ");
+	JLabel mainLabelMainMenu = new JLabel("Menú principal");
+	
+	
+	public void showMainMenu() {
+		ventana.setBounds(450, 20, 500, 700);
+		//ActualUser label
+		actualUserLabelMainMenu.setBounds(10, 20, 300, 40);
+		actualUserLabelMainMenu.setFont(new Font("Serif", Font.BOLD, 15));
+		ventana.add(actualUserLabelMainMenu);
+		
+		//Main Label 
+		mainLabelMainMenu.setBounds(180, 50, 300, 40);
+		mainLabelMainMenu.setFont(new Font("Serif", Font.BOLD, 20));
+		ventana.add(mainLabelMainMenu);
+		
+		//LogOff button
+		logOffButtonMainMenu.setBounds(10, 420, 120, 35);
+		ventana.add(logOffButtonMainMenu);
+	}
+	public JLabel getActualUserLabelMM() {
+		return this.actualUserLabelMainMenu;
+	}
+	public JButton getLogOffButtonMM() {
+		return this.logOffButtonMainMenu;
+	}
+	
+	//End of MainMenu section
 }
